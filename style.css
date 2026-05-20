@@ -1,0 +1,690 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111010;
+    color: #ffffff;
+    font-family: 'Barlow', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+}
+
+/* --- HEADER --- */
+.cabecalho {
+    background-color: #0d0d0d;
+    padding: 14px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1e1e1e;
+    position: relative;
+    z-index: 10;
+}
+
+.logo-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 8px 14px;
+}
+
+.logo-icone {
+    font-size: 20px;
+    color: #ff6b35;
+}
+
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-nome {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    color: #fff;
+}
+
+.logo-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: #ff6b35;
+}
+
+.navegacao {
+    display: flex;
+    gap: 36px;
+}
+
+.navegacao a {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+}
+
+.navegacao a.ativo,
+.navegacao a:hover {
+    color: #ff6b35;
+}
+
+.botao-reserva-topo {
+    background-color: #ff6b35;
+    color: white;
+    border: none;
+    padding: 11px 22px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    transition: background 0.2s;
+}
+
+.botao-reserva-topo:hover {
+    background: #e05a28;
+}
+
+/* ===========================
+   HERO BANNER
+   =========================== */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    min-height: 480px;
+    background-image:
+        linear-gradient(to right, rgba(10, 8, 8, 0.97) 30%, rgba(10, 8, 8, 0.55) 65%, rgba(10, 8, 8, 0.2) 100%),
+        url('background.jpg');
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px 0 0 0;
+    overflow: hidden;
+}
+
+/* Noise texture overlay */
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-conteudo {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.hero-titulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 88px;
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.subtitulo-hero {
+    color: #888888;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+.botao-hero {
+    background-color: #ff6b35;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.botao-hero:hover {
+    background: #e05a28;
+    transform: translateY(-1px);
+}
+
+.hero-direita {
+    display: flex;
+    align-items: flex-start;
+}
+
+.badge-academia {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(20, 18, 18, 0.85);
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 16px 20px;
+    backdrop-filter: blur(8px);
+}
+
+.badge-icone {
+    font-size: 28px;
+    color: #ff6b35;
+}
+
+.badge-nome {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    color: #fff;
+    line-height: 1;
+}
+
+.badge-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: #ff6b35;
+    margin-top: 3px;
+}
+
+/* BENEFÍCIOS */
+.container-beneficios {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 60px 50px 60px;
+    display: flex;
+    gap: 40px;
+}
+
+.card-beneficio {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.circulo-icone {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 107, 53, 0.12);
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff6b35;
+    flex-shrink: 0;
+}
+
+.card-beneficio p {
+    font-size: 13px;
+    color: #cccccc;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+}
+
+/* ===========================
+   GRID DE MODALIDADES
+   =========================== */
+.secao-cards-aulas {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px 60px 60px;
+}
+
+.grid-aulas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.card-modalidade {
+    position: relative;
+    height: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card-modalidade:hover {
+    transform: translateY(-4px);
+}
+
+.card-modalidade:hover .card-overlay {
+    opacity: 0.5;
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+/* Cores de fundo para cada modalidade (quando não há foto) */
+.hiit-card {
+    background: linear-gradient(135deg, #1a0a00 0%, #3d1500 40%, #6b2500 100%);
+}
+.hiit-card::after {
+    content: '🔥';
+    position: absolute;
+    font-size: 120px;
+    opacity: 0.08;
+    bottom: -10px;
+    right: -10px;
+    z-index: 0;
+}
+
+.spinning-card {
+    background: linear-gradient(135deg, #000d1a 0%, #001a3d 40%, #002b6b 100%);
+}
+.spinning-card::after {
+    content: '⚡';
+    position: absolute;
+    font-size: 120px;
+    opacity: 0.08;
+    bottom: -10px;
+    right: -10px;
+    z-index: 0;
+}
+
+.yoga-card {
+    background: linear-gradient(135deg, #001a0a 0%, #003d1a 40%, #005c26 100%);
+}
+.yoga-card::after {
+    content: '🧘';
+    position: absolute;
+    font-size: 120px;
+    opacity: 0.08;
+    bottom: -10px;
+    right: -10px;
+    z-index: 0;
+}
+
+.fitboxing-card {
+    background: linear-gradient(135deg, #1a0010 0%, #3d0028 40%, #6b0045 100%);
+}
+.fitboxing-card::after {
+    content: '🥊';
+    position: absolute;
+    font-size: 120px;
+    opacity: 0.08;
+    bottom: -10px;
+    right: -10px;
+    z-index: 0;
+}
+
+.card-conteudo {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
+}
+
+.tag-modalidade {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    color: #ff6b35;
+    text-transform: uppercase;
+    display: block;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card-estrelas {
+    color: #ff6b35;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.card-duracao {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #ffffff;
+    background: rgba(255, 107, 53, 0.2);
+    border: 1px solid rgba(255, 107, 53, 0.4);
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+}
+
+/* ===========================
+   CRONOGRAMA
+   =========================== */
+.secao-cronograma {
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+    padding: 0 60px;
+}
+
+.titulo-cronograma {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+}
+
+.subtitulo-cronograma {
+    color: #555555;
+    font-size: 14px;
+    margin-bottom: 28px;
+    font-weight: 500;
+}
+
+.lista-de-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-aula {
+    background-color: #161414;
+    padding: 22px 28px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #1e1e1e;
+    transition: border-color 0.2s;
+}
+
+.card-aula:hover {
+    border-color: #2a2a2a;
+}
+
+.card-aula.forca { border-left: 4px solid #ff6b35; }
+.card-aula.cardio { border-left: 4px solid #2ecc71; }
+.card-aula.yoga { border-left: 4px solid #3498db; }
+.card-aula.hiit { border-left: 4px solid #e74c3c; }
+
+.bloco-tempo {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #222222;
+    padding-right: 35px;
+    min-width: 170px;
+}
+
+.bloco-tempo .hora {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.bloco-tempo .duracao {
+    color: #555555;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 4px;
+    letter-spacing: 0.08em;
+}
+
+.bloco-info {
+    flex-grow: 1;
+    padding-left: 35px;
+}
+
+.bloco-info h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    letter-spacing: 0.02em;
+}
+
+.bloco-info .professor {
+    color: #ff6b35;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+}
+
+.tags span {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.tag-categoria { background-color: rgba(255, 107, 53, 0.12); color: #ff6b35; border: 1px solid rgba(255, 107, 53, 0.2); }
+.tag-categoria-cardio { background-color: rgba(46, 204, 113, 0.12); color: #2ecc71; border: 1px solid rgba(46, 204, 113, 0.2); }
+.tag-categoria-yoga { background-color: rgba(52, 152, 219, 0.12); color: #3498db; border: 1px solid rgba(52, 152, 219, 0.2); }
+.tag-categoria-hiit { background-color: rgba(231, 76, 60, 0.12); color: #e74c3c; border: 1px solid rgba(231, 76, 60, 0.2); }
+
+.tag-nivel {
+    background-color: #222222;
+    color: #aaaaaa;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #2a2a2a;
+}
+
+.ponto-nivel {
+    font-size: 7px;
+}
+
+.botao-card {
+    background-color: #ff6b35;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.botao-card:hover {
+    background-color: #e05a28;
+}
+
+/* ===========================
+   RODAPÉ
+   =========================== */
+.rodape-completo {
+    background-color: #0a0909;
+    padding: 60px 60px 36px 60px;
+    border-top: 1px solid #1a1a1a;
+}
+
+.container-colunas-rodape {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.coluna {
+    flex: 1;
+}
+
+.logo-rodape-caixa {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    letter-spacing: 0.08em;
+    color: #ff6b35;
+}
+
+.texto-sobre {
+    color: #555555;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.coluna h4 {
+    margin-bottom: 20px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 0.1em;
+    font-weight: 800;
+}
+
+.coluna ul {
+    list-style: none;
+}
+
+.coluna ul li {
+    margin-bottom: 10px;
+}
+
+.coluna ul li a {
+    color: #555555;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.coluna ul li a:hover {
+    color: #ff6b35;
+}
+
+.coluna p {
+    color: #555555;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.texto-boletim {
+    line-height: 1.5;
+}
+
+.formulario-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.formulario-newsletter input {
+    background-color: #111111;
+    border: 1px solid #222222;
+    padding: 11px 14px;
+    color: white;
+    border-radius: 6px;
+    font-size: 13px;
+    outline: none;
+}
+
+.formulario-newsletter input:focus {
+    border-color: #ff6b35;
+}
+
+.formulario-newsletter button {
+    background-color: #ff6b35;
+    color: white;
+    border: none;
+    padding: 11px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    transition: background 0.2s;
+}
+
+.formulario-newsletter button:hover {
+    background: #e05a28;
+}
+
+.divisor-rodape {
+    border: none;
+    border-top: 1px solid #1a1a1a;
+    margin: 44px 0 22px 0;
+}
+
+.rodape-inferior {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #333333;
+}
+
+.links-legais a {
+    color: #333333;
+    text-decoration: none;
+    margin-left: 22px;
+    transition: color 0.2s;
+}
+
+.links-legais a:hover {
+    color: #ff6b35;
+}
